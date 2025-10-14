@@ -33,9 +33,9 @@ export const ENTRANCE_CONFIG = {
     /** Call to action button text */
     cta: {
       /** Button text */
-      text: 'Get started',
+      text: 'Explore',
       /** Button icon */
-      icon: '→'
+      icon: 'TbArrowDownRight'
     }
   },
 
@@ -62,7 +62,7 @@ export const ENTRANCE_CONFIG = {
   /** Layout configuration */
   layout: {
     /** Container max width */
-    containerMaxWidth: 'max-w-4xl',
+    containerMaxWidth: 'max-w-6xl',
     /** Container padding */
     containerPadding: 'px-4 sm:px-6 lg:px-8',
     /** Vertical spacing */
@@ -96,13 +96,23 @@ export const ENTRANCE_CONFIG = {
   /** Animation configuration */
   animation: {
     /** Fade in duration */
-    fadeInDuration: 'duration-1000',
+    fadeInDuration: 'duration-600',
     /** Fade in delay */
-    fadeInDelay: 'delay-200',
+    fadeInDelay: 'delay-50',
     /** Button hover scale */
     buttonHoverScale: 'hover:scale-105',
-    /** Button hover transition */
-    buttonHoverTransition: 'transition-transform duration-200'
+    /** Button animation delay */
+    buttonDelay: 'delay-150',
+    /** Slide up animation */
+    slideUpDuration: 'duration-600',
+    /** Slide up delay */
+    slideUpDelay: 'delay-50',
+    /** Initial state classes */
+    initialOpacity: 'opacity-0',
+    initialTransform: 'translate-y-4',
+    /** Final state classes */
+    finalOpacity: 'opacity-100',
+    finalTransform: 'translate-y-0'
   },
 
   /** Responsive breakpoints */

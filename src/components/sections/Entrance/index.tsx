@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
+import { TbArrowDownRight } from 'react-icons/tb';
 import { ENTRANCE_CONFIG } from './config';
 import { EntranceProps } from './types';
 import { 
@@ -52,6 +53,18 @@ export default function Entrance({
   showAnimations = true,
   onCTAClick
 }: EntranceProps) {
+  // Animation state
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Trigger animation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 50); // Çok küçük gecikme
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // Performance monitoring
   const { logPerformance } = usePerformanceMonitor('Entrance');
 
@@ -79,6 +92,28 @@ export default function Entrance({
     return `${ENTRANCE_CONFIG.animation.fadeInDuration} ${ENTRANCE_CONFIG.animation.fadeInDelay}`;
   }, [state.animationsEnabled]);
 
+  // Slide up animation classes
+  const slideUpClasses = useMemo(() => {
+    const baseClasses = `transition-all ${ENTRANCE_CONFIG.animation.slideUpDuration} ${ENTRANCE_CONFIG.animation.slideUpDelay}`;
+    
+    if (isVisible) {
+      return `${baseClasses} ${ENTRANCE_CONFIG.animation.finalOpacity} ${ENTRANCE_CONFIG.animation.finalTransform}`;
+    }
+    
+    return `${baseClasses} ${ENTRANCE_CONFIG.animation.initialOpacity} ${ENTRANCE_CONFIG.animation.initialTransform}`;
+  }, [isVisible]);
+
+  // Button animation classes (delayed)
+  const buttonAnimationClasses = useMemo(() => {
+    const baseClasses = `transition-all ${ENTRANCE_CONFIG.animation.slideUpDuration} ${ENTRANCE_CONFIG.animation.buttonDelay}`;
+    
+    if (isVisible) {
+      return `${baseClasses} ${ENTRANCE_CONFIG.animation.finalOpacity} ${ENTRANCE_CONFIG.animation.finalTransform}`;
+    }
+    
+    return `${baseClasses} ${ENTRANCE_CONFIG.animation.initialOpacity} ${ENTRANCE_CONFIG.animation.initialTransform}`;
+  }, [isVisible]);
+
   // Handle CTA click
   const handleClick = () => {
     if (onCTAClick) {
@@ -98,7 +133,7 @@ export default function Entrance({
       <div className={`${ENTRANCE_CONFIG.layout.containerMaxWidth} ${ENTRANCE_CONFIG.layout.containerPadding} mx-auto`}>
         <div className={`${ENTRANCE_CONFIG.layout.textAlignment} ${animationClasses}`}>
           {/* Title */}
-          <div>
+          <div className={slideUpClasses}>
             {/* Single line title */}
             <h1 className={`${ENTRANCE_CONFIG.typography.titleSize} ${ENTRANCE_CONFIG.typography.titleWeight} ${ENTRANCE_CONFIG.typography.titleLineHeight} ${ENTRANCE_CONFIG.typography.titleLetterSpacing}`}>
               <span className={ENTRANCE_CONFIG.typography.highlightedColor}>
@@ -113,9 +148,9 @@ export default function Entrance({
           </div>
 
           {/* CTA Button */}
-          <div className={ENTRANCE_CONFIG.layout.buttonMarginTop}>
+          <div className={`${ENTRANCE_CONFIG.layout.buttonMarginTop} ${buttonAnimationClasses}`}>
             <Button
-              variant="outline"
+              variant="primary"
               size="md"
               onClick={handleClick}
               className="inline-flex items-center"
@@ -124,7 +159,7 @@ export default function Entrance({
               {safeCTA.text}
               {safeCTA.icon && (
                 <span className={ENTRANCE_CONFIG.styling.iconMargin}>
-                  {safeCTA.icon}
+                  <TbArrowDownRight className="w-4 h-4" />
                 </span>
               )}
             </Button>

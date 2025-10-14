@@ -136,11 +136,12 @@ export function getSafePartnerLogos(logos: readonly unknown[] | unknown[]): Part
 
 /**
  * Duplicates logos array for seamless infinite scroll
+ * Creates 4 copies to ensure smooth infinite scrolling
  * @param logos - Array of logos to duplicate
- * @returns Duplicated array
+ * @returns Duplicated array with 4 copies
  */
 export function duplicateLogosForScroll(logos: PartnerLogo[]): PartnerLogo[] {
-  return [...logos, ...logos];
+  return [...logos, ...logos, ...logos, ...logos];
 }
 
 /**

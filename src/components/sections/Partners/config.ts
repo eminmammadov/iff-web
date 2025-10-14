@@ -35,7 +35,7 @@ export const PARTNERS_CONFIG = {
   /** Animation configuration */
   animation: {
     /** Default animation speed in milliseconds */
-    speed: 8000,
+    speed: 12000,
     /** Whether to pause animation on hover */
     pauseOnHover: true,
     /** Animation timing function */
@@ -51,9 +51,9 @@ export const PARTNERS_CONFIG = {
     /** Logo container height */
     logoHeight: 'h-16',
     /** Spacing between logos */
-    spacing: 'space-x-8',
+    spacing: 'space-x-12',
     /** Gradient overlay width */
-    gradientWidth: 'w-16'
+    gradientWidth: 'w-20'
   },
 
   /** Styling configuration */
@@ -83,7 +83,7 @@ export const PARTNERS_CONFIG = {
           transform: translateX(0);
         }
         100% {
-          transform: translateX(-50%);
+          transform: translateX(-25%);
         }
       }
     `,

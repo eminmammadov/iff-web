@@ -182,7 +182,7 @@ export function getSafeCTAConfig(cta: unknown): CTAConfig {
   } catch {
     // Return fallback CTA config
     return {
-      text: 'Get started',
+      text: 'Explore',
       icon: '→',
       variant: 'outline'
     };
