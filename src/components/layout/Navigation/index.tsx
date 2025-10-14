@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useMemo, useCallback, Suspense } from 'react';
 import { TbClearAll, TbCircuitResistor, TbCircuitCapacitorPolarized, TbArrowUpRight } from 'react-icons/tb';
 import { NAVIGATION_CONFIG } from './config';
+import { COLORS } from '@/config/colors';
 import { validateNavigationItems, getSafeNavigationItem, NavigationItem } from './utils';
 import { useNavigation } from './context';
 import { useDebounce, useLazyDropdown } from './hooks';
@@ -126,7 +127,7 @@ function NavigationLoadingFallback() {
   return (
     <nav className="flex items-center space-x-4 animate-pulse">
       {[...Array(4)].map((_, i) => (
-        <div key={i} className="h-8 bg-gray-200 rounded w-20"></div>
+        <div key={i} className={`h-8 ${COLORS.bgGray200} rounded w-20`}></div>
       ))}
     </nav>
   );
@@ -270,7 +271,7 @@ function NavigationItemComponent({
         {item.hasDropdown && item.submenu ? (
           <div className="relative">
             <button
-              className={`flex items-center px-3 py-2 rounded-lg ${themeClasses.link} transition-all duration-${animationDurationMs} text-gray-900 ${
+              className={`flex items-center px-3 py-2 rounded-lg ${themeClasses.link} transition-all duration-${animationDurationMs} ${COLORS.textPrimary} ${
                 item.isActive ? themeClasses.active : themeClasses.hover
               }`}
               onClick={() => onToggleDropdown(item.label)}
@@ -295,12 +296,12 @@ function NavigationItemComponent({
             </button>
             
             {/* Mobile Dropdown - Always visible */}
-            <div className="mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-xl">
+            <div className={`mt-2 w-full ${COLORS.bgWhite} ${COLORS.borderGray200} rounded-xl ${COLORS.shadowXl}`}>
               {item.submenu.map((subItem, subIndex) => (
                 <Link
                   key={subIndex}
                   href={subItem.href}
-                  className="flex items-start p-4 transition-colors duration-200 hover:bg-gray-100 first:rounded-t-xl last:rounded-b-xl group/link"
+                  className={`flex items-start p-4 transition-colors duration-200 ${COLORS.hoverGray100} first:rounded-t-xl last:rounded-b-xl group/link`}
                   role="menuitem"
                   data-testid={subItem.testId || `nav-subitem-${subIndex}`}
                   {...(subItem.external && {
@@ -309,9 +310,9 @@ function NavigationItemComponent({
                   })}
                 >
                   {/* Icon */}
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 bg-gray-900 group-hover/link:bg-white group-hover/link:border group-hover/link:border-gray-300 transition-all duration-200">
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 ${COLORS.bgGray900} group-hover/link:bg-white group-hover/link:border group-hover/link:border-gray-300 transition-all duration-200`}>
                     {subItem.icon ? (
-                      <span className="text-white group-hover/link:text-gray-900 text-lg transition-colors duration-200">
+                      <span className={`${COLORS.textWhite} group-hover/link:${COLORS.textPrimary} text-lg transition-colors duration-200`}>
                         {subItem.icon}
                       </span>
                     ) : (
@@ -328,14 +329,14 @@ function NavigationItemComponent({
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-sm font-semibold text-gray-900">
+                      <h3 className={`text-sm font-semibold ${COLORS.textPrimary}`}>
                         {subItem.label}
                       </h3>
                       {subItem.external && (
-                        <TbArrowUpRight className="w-4 h-4 text-gray-500 ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200" />
+                        <TbArrowUpRight className={`w-4 h-4 text-gray-500 ml-2 ${COLORS.opacity0} group-hover/link:${COLORS.opacity100} transition-opacity duration-200`} />
                       )}
                     </div>
-                    <p className="text-xs mt-1 text-gray-600">
+                    <p className={`text-xs mt-1 ${COLORS.textSecondary}`}>
                       {subItem.description || 'Explore this section'}
                     </p>
                   </div>
@@ -346,7 +347,7 @@ function NavigationItemComponent({
         ) : (
           <Link 
             href={item.href}
-            className={`flex items-center px-3 py-2 rounded-lg ${themeClasses.link} transition-all duration-${animationDurationMs} text-gray-900 ${
+            className={`flex items-center px-3 py-2 rounded-lg ${themeClasses.link} transition-all duration-${animationDurationMs} ${COLORS.textPrimary} ${
               item.isActive ? themeClasses.active : themeClasses.hover
             }`}
             data-testid={item.testId || `nav-link-${index}`}
@@ -371,7 +372,7 @@ function NavigationItemComponent({
       {item.hasDropdown && item.submenu ? (
         <div className="relative">
           <button
-            className={`flex items-center px-3 py-2 rounded-lg ${themeClasses.link} transition-all duration-${animationDurationMs} text-gray-900 ${
+            className={`flex items-center px-3 py-2 rounded-lg ${themeClasses.link} transition-all duration-${animationDurationMs} ${COLORS.textPrimary} ${
               item.isActive ? themeClasses.active : themeClasses.hover
             }`}
             onClick={() => onToggleDropdown(item.label)}
@@ -400,7 +401,7 @@ function NavigationItemComponent({
           {/* Dropdown Menu */}
           {shouldRenderDropdown && (
             <div
-              className={`${showOnMobile ? NAVIGATION_CONFIG.dropdown.positioning.mobile : NAVIGATION_CONFIG.dropdown.positioning.desktop} ${showOnMobile ? NAVIGATION_CONFIG.dropdown.width.mobile : NAVIGATION_CONFIG.dropdown.width.desktop} ${themeClasses.dropdown} rounded-xl shadow-xl transition-all duration-${animationDurationMs} z-50 ${
+              className={`${showOnMobile ? NAVIGATION_CONFIG.dropdown.positioning.mobile : NAVIGATION_CONFIG.dropdown.positioning.desktop} ${showOnMobile ? NAVIGATION_CONFIG.dropdown.width.mobile : NAVIGATION_CONFIG.dropdown.width.desktop} ${themeClasses.dropdown} rounded-xl ${COLORS.shadowXl} transition-all duration-${animationDurationMs} z-50 ${
                 showOnMobile ? 'opacity-100 visible translate-y-0' : (shouldShowDropdown ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2')
               }`}
               role="menu"
@@ -420,9 +421,9 @@ function NavigationItemComponent({
                   })}
                 >
                   {/* Icon */}
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 bg-gray-900 group-hover/link:bg-white group-hover/link:border group-hover/link:border-gray-300 transition-all duration-200">
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 ${COLORS.bgGray900} group-hover/link:bg-white group-hover/link:border group-hover/link:border-gray-300 transition-all duration-200`}>
                     {subItem.icon ? (
-                      <span className="text-white group-hover/link:text-gray-900 text-lg transition-colors duration-200">
+                      <span className={`${COLORS.textWhite} group-hover/link:${COLORS.textPrimary} text-lg transition-colors duration-200`}>
                         {subItem.icon}
                       </span>
                     ) : (
@@ -439,14 +440,14 @@ function NavigationItemComponent({
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-sm font-semibold text-gray-900">
+                      <h3 className={`text-sm font-semibold ${COLORS.textPrimary}`}>
                         {subItem.label}
                       </h3>
                       {subItem.external && (
-                        <TbArrowUpRight className="w-4 h-4 text-gray-500 ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200" />
+                        <TbArrowUpRight className={`w-4 h-4 text-gray-500 ml-2 ${COLORS.opacity0} group-hover/link:${COLORS.opacity100} transition-opacity duration-200`} />
                       )}
                     </div>
-                    <p className="text-xs mt-1 text-gray-600">
+                    <p className={`text-xs mt-1 ${COLORS.textSecondary}`}>
                       {subItem.description || 'Explore this section'}
                     </p>
                   </div>

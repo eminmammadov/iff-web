@@ -15,6 +15,7 @@
  * const containerClass = HERO_CONFIG.styles.container;
  * ```
  */
+import { COLORS } from '@/config/colors';
 export const HERO_CONFIG = {
   /** Hero section content */
   content: {
@@ -54,7 +55,7 @@ export const HERO_CONFIG = {
       /** Font weight */
       weight: "font-semibold",
       /** Text color */
-      color: "text-white",
+      color: COLORS.textWhite,
       /** Line height */
       lineHeight: "leading-none",
       /** Letter spacing */
@@ -69,7 +70,7 @@ export const HERO_CONFIG = {
       /** Font weight */
       weight: "font-normal",
       /** Text color */
-      color: "text-gray-200",
+      color: COLORS.textLight,
       /** Line height */
       lineHeight: "leading-relaxed",
       /** Max width */

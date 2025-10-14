@@ -3,6 +3,7 @@
 import { useMemo } from 'react';
 import Image from 'next/image';
 import { HERO_CONFIG } from './config';
+import { COLORS } from '@/config/colors';
 import { HeroProps, HeroContentConfig, BackgroundConfig } from './types';
 import HeroContent from './components/HeroContent';
 
@@ -70,7 +71,7 @@ export default function Hero({
 
   return (
     <section 
-      className={`${HERO_CONFIG.layout.container} bg-white ${className}`}
+      className={`${HERO_CONFIG.layout.container} ${COLORS.bgWhite} ${className}`}
       data-testid={testId}
       role="banner"
       aria-label="Hero section"
@@ -97,7 +98,7 @@ export default function Hero({
         </video>
         {/* Black overlay for better text readability */}
         <div 
-          className="absolute inset-0 bg-black" 
+          className={`absolute inset-0 ${COLORS.bgBlack}`} 
           style={{ opacity: backgroundConfig.overlayOpacity }}
         />
       </div>

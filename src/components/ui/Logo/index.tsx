@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { COLORS } from '@/config/colors';
 
 /**
  * Props for the Logo component
@@ -65,7 +66,7 @@ export default function Logo({
   // Fallback component when image fails to load
   const FallbackLogo = () => (
     <div 
-      className={`${className} bg-gray-900 text-white flex items-center justify-center font-semibold text-sm rounded`}
+      className={`${className} ${COLORS.bgGray900} ${COLORS.textWhite} flex items-center justify-center font-semibold text-sm rounded`}
       style={{ width: `${width}px`, height: `${height}px` }}
       role="img"
       aria-label={alt}
@@ -77,7 +78,7 @@ export default function Logo({
   return (
     <Link 
       href={href} 
-      className="flex items-center transition-opacity duration-200 hover:opacity-80 rounded"
+      className={`flex items-center transition-opacity duration-200 hover:opacity-80 rounded`}
       aria-label="Go to homepage"
     >
       {!imageError ? (

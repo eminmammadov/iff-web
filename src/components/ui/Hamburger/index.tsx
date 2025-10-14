@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { COLORS } from '@/config/colors';
 
 /**
  * Props for the Hamburger component
@@ -52,7 +53,7 @@ export default function Hamburger({
 }: HamburgerProps) {
   return (
     <button 
-      className={`text-gray-900 hover:text-gray-900 transition-colors duration-200 cursor-pointer ${className}`}
+      className={`${COLORS.textPrimary} hover:${COLORS.textPrimary} transition-colors duration-200 cursor-pointer ${className}`}
       onClick={onClick}
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
       aria-expanded={isOpen}

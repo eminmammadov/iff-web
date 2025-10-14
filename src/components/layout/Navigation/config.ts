@@ -15,6 +15,7 @@
  * const duration = NAVIGATION_CONFIG.animationDuration.normal;
  * ```
  */
+import { COLORS } from '@/config/colors';
 export const NAVIGATION_CONFIG = {
   /** Base URL for external links - defaults to production URL if not set */
   baseUrl: process.env.NEXT_PUBLIC_APP_URL || 'https://app.if.fund',
@@ -34,13 +35,13 @@ export const NAVIGATION_CONFIG = {
     /** Default theme with gray color scheme */
     default: {
       /** Link text colors */
-      link: 'text-gray-600 hover:text-gray-900',
+      link: `${COLORS.textSecondary} hover:${COLORS.textPrimary}`,
       /** Active state colors */
-      active: 'bg-gray-100 text-gray-900 font-medium',
+      active: `${COLORS.bgGray100} ${COLORS.textPrimary} font-medium`,
       /** Dropdown background and border */
-      dropdown: 'bg-white border-gray-200',
+      dropdown: `${COLORS.bgWhite} ${COLORS.borderGray200}`,
       /** Hover state background */
-      hover: 'hover:bg-gray-200'
+      hover: COLORS.hoverGray200
     },
     /** Dark theme for dark mode interfaces */
     dark: {

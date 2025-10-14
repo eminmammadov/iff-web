@@ -6,6 +6,7 @@ import Navigation from '@/components/layout/Navigation';
 import Hamburger from '@/components/ui/Hamburger';
 import { NavigationProvider, useNavigation } from '@/components/layout/Navigation/context';
 import { HEADER_CONFIG } from './config';
+import { COLORS } from '@/config/colors';
 import LaunchButton from './LaunchButton';
 import HeaderErrorBoundary from './ErrorBoundary';
 
@@ -94,12 +95,12 @@ function HeaderLoadingFallback() {
     <header className={HEADER_CONFIG.classes.header}>
       <div className={HEADER_CONFIG.classes.container}>
         <div className={`${HEADER_CONFIG.padding.all} ${HEADER_CONFIG.classes.flexContainer} ${HEADER_CONFIG.dimensions.height}`}>
-          <div className="animate-pulse bg-gray-200 h-8 w-32 rounded"></div>
+          <div className={`animate-pulse ${COLORS.bgGray200} h-8 w-32 rounded`}></div>
           <div className="hidden md:flex space-x-4">
-            <div className="animate-pulse bg-gray-200 h-6 w-16 rounded"></div>
-            <div className="animate-pulse bg-gray-200 h-6 w-20 rounded"></div>
+            <div className={`animate-pulse ${COLORS.bgGray200} h-6 w-16 rounded`}></div>
+            <div className={`animate-pulse ${COLORS.bgGray200} h-6 w-20 rounded`}></div>
           </div>
-          <div className="animate-pulse bg-gray-200 h-10 w-24 rounded"></div>
+          <div className={`animate-pulse ${COLORS.bgGray200} h-10 w-24 rounded`}></div>
         </div>
       </div>
     </header>

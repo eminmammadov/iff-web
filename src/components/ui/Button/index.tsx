@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { COLORS } from '@/config/colors';
 
 /**
  * Props for the Button component
@@ -79,10 +80,10 @@ export default function Button({
   const baseClasses = 'flex items-center justify-center font-medium transition-all duration-200 rounded-lg focus:outline-none cursor-pointer';
   
   const variantClasses = {
-    primary: 'bg-gray-100 hover:bg-gray-200 text-gray-900',
-    secondary: 'bg-gray-900 hover:bg-gray-800 text-white',
-    outline: 'border border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900',
-    green: 'bg-[#5CE05C] hover:bg-[#AA965F] text-black'
+    primary: `${COLORS.bgGray100} ${COLORS.hoverGray200} ${COLORS.textPrimary}`,
+    secondary: `${COLORS.bgGray900} hover:bg-gray-800 ${COLORS.textWhite}`,
+    outline: `border ${COLORS.borderGray300} hover:border-gray-400 ${COLORS.textSecondary} hover:${COLORS.textPrimary}`,
+    green: `${COLORS.greenBg} ${COLORS.greenHover} text-black`
   };
 
   const sizeClasses = {

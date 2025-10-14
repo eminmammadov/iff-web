@@ -15,6 +15,7 @@
  * const appUrl = HEADER_CONFIG.appUrl;
  * ```
  */
+import { COLORS } from '@/config/colors';
 export const HEADER_CONFIG = {
   /** Application URL for external links */
   appUrl: process.env.NEXT_PUBLIC_APP_URL || 'https://app.if.fund',
@@ -81,13 +82,13 @@ export const HEADER_CONFIG = {
   /** CSS classes for different states */
   classes: {
     /** Header container classes */
-    header: 'w-full bg-white border-b border-gray-100 relative',
+    header: `w-full ${COLORS.bgWhite} border-b border-gray-100 relative`,
     /** Main container classes */
     container: 'w-full',
     /** Flex container classes */
     flexContainer: 'flex items-center justify-between',
     /** Mobile menu classes */
-    mobileMenu: 'md:hidden fixed left-0 right-0 bg-white border-t border-gray-100 shadow-lg',
+    mobileMenu: `md:hidden fixed left-0 right-0 ${COLORS.bgWhite} border-t border-gray-100 ${COLORS.shadowLg}`,
     /** Mobile menu content classes */
     mobileMenuContent: 'px-4 py-4'
   }
