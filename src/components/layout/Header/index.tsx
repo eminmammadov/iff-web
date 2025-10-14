@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, Suspense } from 'react';
+import { useMemo, Suspense, useEffect } from 'react';
 import Logo from '@/components/ui/Logo';
 import Navigation from '@/components/layout/Navigation';
 import Hamburger from '@/components/ui/Hamburger';
@@ -32,6 +32,20 @@ interface HeaderContentProps {
  */
 function HeaderContent({ className = '' }: HeaderContentProps) {
   const { isMobileMenuOpen, toggleMobileMenu } = useNavigation();
+
+  // Scroll lock when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen()) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
 
   // Memoize mobile menu classes for performance
   const mobileMenuClasses = useMemo(() => 

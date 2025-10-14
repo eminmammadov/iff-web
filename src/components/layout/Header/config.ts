@@ -28,6 +28,14 @@ export const HEADER_CONFIG = {
     heightPx: 64
   },
   
+  /** Header positioning */
+  positioning: {
+    /** Sticky positioning */
+    sticky: 'sticky top-0',
+    /** Z-index for sticky header */
+    zIndex: 'z-50'
+  },
+  
   /** Mobile menu configuration */
   mobileMenu: {
     /** Top position when fixed */
@@ -82,7 +90,7 @@ export const HEADER_CONFIG = {
   /** CSS classes for different states */
   classes: {
     /** Header container classes */
-    header: `w-full ${COLORS.bgWhite} border-b border-gray-100 relative`,
+    header: `w-full ${COLORS.bgWhite} border-b border-gray-100 relative sticky top-0 z-50`,
     /** Main container classes */
     container: 'w-full',
     /** Flex container classes */

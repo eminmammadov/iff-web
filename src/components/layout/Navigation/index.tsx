@@ -296,7 +296,7 @@ function NavigationItemComponent({
             </button>
             
             {/* Mobile Dropdown - Always visible */}
-            <div className={`mt-2 w-full ${COLORS.bgWhite} ${COLORS.borderGray200} rounded-xl ${COLORS.shadowXl}`}>
+            <div className={`mt-2 w-full ${COLORS.bgWhite} border border-gray-200 rounded-xl`}>
               {item.submenu.map((subItem, subIndex) => (
                 <Link
                   key={subIndex}
