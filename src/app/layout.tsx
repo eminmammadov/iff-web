@@ -25,6 +25,7 @@ export default function RootLayout({
         className={`${dmSans.variable} antialiased`}
         data-new-gr-c-s-check-loaded="14.1257.0"
         data-gr-ext-installed=""
+        suppressHydrationWarning={true}
       >
         <Header />
         {children}

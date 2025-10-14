@@ -17,6 +17,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-dm-sans), Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Ensure page starts at top on refresh */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Force scroll to top on page load */
+html, body {
+  scroll-snap-type: none;
 }
 
 /* Remove focus outline globally */
