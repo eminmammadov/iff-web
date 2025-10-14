@@ -82,7 +82,7 @@ export const HERO_CONFIG = {
   /** Layout and spacing configuration */
   layout: {
     /** Container classes */
-    container: "h-[60vh] md:h-[70vh] flex items-center relative",
+    container: "h-[60vh] md:h-[60vh] flex items-center relative",
     /** Content wrapper classes */
     contentWrapper: "w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16",
     /** Content area classes */

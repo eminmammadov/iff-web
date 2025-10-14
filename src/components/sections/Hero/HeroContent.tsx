@@ -1,6 +1,6 @@
 import Button from '@/components/ui/Button';
-import { HERO_CONFIG } from '../config';
-import { HeroContentConfig } from '../types';
+import { HERO_CONFIG } from './config';
+import { HeroContentConfig } from './types';
 
 /**
  * Props for the HeroContent component

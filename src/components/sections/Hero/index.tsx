@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { HERO_CONFIG } from './config';
 import { COLORS } from '@/config/colors';
 import { HeroProps, HeroContentConfig, BackgroundConfig } from './types';
-import HeroContent from './components/HeroContent';
+import HeroContent from './HeroContent';
 
 /**
  * Hero component that renders the main hero section of the website.
