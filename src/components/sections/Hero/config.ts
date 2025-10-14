@@ -42,7 +42,7 @@ export const HERO_CONFIG = {
     /** Background image alt text */
     alt: "Hero background image",
     /** Background overlay opacity */
-    overlayOpacity: 0.1
+    overlayOpacity: 0.7
   },
   
   /** Typography configuration */
@@ -81,13 +81,13 @@ export const HERO_CONFIG = {
   /** Layout and spacing configuration */
   layout: {
     /** Container classes */
-    container: "h-[70vh] flex items-center relative",
+    container: "h-[60vh] md:h-[70vh] flex items-center relative",
     /** Content wrapper classes */
     contentWrapper: "w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16",
     /** Content area classes */
     contentArea: "space-y-6",
     /** Button container classes */
-    buttonContainer: "flex flex-col sm:flex-row gap-2"
+    buttonContainer: "flex flex-row gap-2"
   },
   
   /** Responsive breakpoints */

@@ -96,7 +96,10 @@ export default function Hero({
           />
         </video>
         {/* Black overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/70" />
+        <div 
+          className="absolute inset-0 bg-black" 
+          style={{ opacity: backgroundConfig.overlayOpacity }}
+        />
       </div>
 
       {/* Content */}
