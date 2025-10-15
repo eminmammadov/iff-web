@@ -86,7 +86,7 @@ export const TOOLS_CONFIG = {
   /** Typography configuration */
   typography: {
     /** Main title font size */
-    titleSize: 'text-4xl md:text-5xl lg:text-5xl xl:text-5xl',
+    titleSize: 'text-3xl md:text-4xl lg:text-5xl xl:text-5xl',
     /** Main title font weight */
     titleWeight: 'font-medium',
     /** Main title line height */
@@ -128,7 +128,7 @@ export const TOOLS_CONFIG = {
     /** Grid gap */
     gridGap: 'gap-4 lg:gap-6',
     /** Gap between top and bottom grid sections */
-    gridSectionGap: 'gap-8 lg:gap-12',
+    gridSectionGap: 'gap-4 lg:gap-6',
     /** Card padding */
     cardPadding: 'p-4 lg:p-6',
     /** Card border radius */
@@ -222,7 +222,9 @@ export const TOOLS_CONFIG = {
     /** Active dot color */
     activeDotColor: 'bg-green-500',
     /** Dot hover color */
-    dotHoverColor: 'hover:bg-green-400'
+    dotHoverColor: 'hover:bg-green-400',
+    /** Touch swipe sensitivity in pixels */
+    touchSensitivity: 50
   },
 
   /** Responsive breakpoints */

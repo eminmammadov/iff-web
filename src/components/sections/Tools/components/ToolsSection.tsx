@@ -140,58 +140,62 @@ export default function ToolsSection({
         `}>
           {/* Top Grid - Title and Description+CTA */}
           <div className={`
+            ${TOOLS_CONFIG.layout.heroPadding}
+            bg-gray-50
+            ${TOOLS_CONFIG.layout.heroBorderRadius}
+            border border-gray-300
             grid grid-cols-1 lg:grid-cols-4
             ${TOOLS_CONFIG.layout.gridGap}
           `}>
-          {/* Grid 1 - Title (Sol üst) */}
-          <div className="lg:col-span-2 flex flex-col justify-start">
-            <div className={`${TOOLS_CONFIG.layout.titleMaxWidth}`}>
-              <h1 
-                className={`
-                  ${TOOLS_CONFIG.typography.titleSize}
-                  ${TOOLS_CONFIG.typography.titleWeight}
-                  ${TOOLS_CONFIG.typography.titleLineHeight}
-                  ${TOOLS_CONFIG.styling.textPrimary}
-                `}
-                data-testid={`${testId}-title`}
-              >
-                {TOOLS_CONFIG.content.title}
-              </h1>
+            {/* Grid 1 - Title (Sol üst) */}
+            <div className="lg:col-span-2 flex flex-col justify-start">
+              <div className={`${TOOLS_CONFIG.layout.titleMaxWidth}`}>
+                <h1 
+                  className={`
+                    ${TOOLS_CONFIG.typography.titleSize}
+                    ${TOOLS_CONFIG.typography.titleWeight}
+                    ${TOOLS_CONFIG.typography.titleLineHeight}
+                    ${TOOLS_CONFIG.styling.textPrimary}
+                  `}
+                  data-testid={`${testId}-title`}
+                >
+                  {TOOLS_CONFIG.content.title}
+                </h1>
+              </div>
             </div>
-          </div>
 
-          {/* Grid 2 - Description and CTA (Sağ üst) */}
-          <div className="lg:col-span-2 flex flex-col justify-center">
-            <p 
-              className={`
-                ${TOOLS_CONFIG.typography.shortDescriptionSize}
-                ${TOOLS_CONFIG.typography.descriptionWeight}
-                ${TOOLS_CONFIG.typography.shortDescriptionLineHeight}
-                ${TOOLS_CONFIG.styling.textSecondary}
-                ${TOOLS_CONFIG.layout.shortDescriptionMarginBottom}
-              `}
-              data-testid={`${testId}-description`}
-            >
-              Stay in control of your investments with real-time insights and performance tracking. Helps you make informed decisions, optimise your strategy, and grow your portfolio with confidence.
-            </p>
-            
-            {/* CTA Button */}
-            <div className="flex justify-start">
-              <Button
-                href={safeContent.cta.href}
-                variant={safeContent.cta.variant}
-                size={safeContent.cta.size}
-                onClick={handleClick}
+            {/* Grid 2 - Description and CTA (Sağ üst) */}
+            <div className="lg:col-span-2 flex flex-col justify-center">
+              <p 
                 className={`
-                  ${TOOLS_CONFIG.styling.transitionDuration}
-                  ${TOOLS_CONFIG.styling.buttonHoverScale}
+                  ${TOOLS_CONFIG.typography.shortDescriptionSize}
+                  ${TOOLS_CONFIG.typography.descriptionWeight}
+                  ${TOOLS_CONFIG.typography.shortDescriptionLineHeight}
+                  ${TOOLS_CONFIG.styling.textSecondary}
+                  ${TOOLS_CONFIG.layout.shortDescriptionMarginBottom}
                 `}
-                testId={`${testId}-cta-button`}
+                data-testid={`${testId}-description`}
               >
-                {safeContent.cta.text}
-              </Button>
+                Stay in control of your investments with real-time insights and performance tracking. Helps you make informed decisions, optimise your strategy, and grow your portfolio with confidence.
+              </p>
+              
+              {/* CTA Button */}
+              <div className="flex justify-start">
+                <Button
+                  href={safeContent.cta.href}
+                  variant={safeContent.cta.variant}
+                  size={safeContent.cta.size}
+                  onClick={handleClick}
+                  className={`
+                    ${TOOLS_CONFIG.styling.transitionDuration}
+                    ${TOOLS_CONFIG.styling.buttonHoverScale}
+                  `}
+                  testId={`${testId}-cta-button`}
+                >
+                  {safeContent.cta.text}
+                </Button>
+              </div>
             </div>
-          </div>
           </div>
 
           {/* Bottom Grid - Slider and Hero Card */}

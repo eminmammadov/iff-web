@@ -59,6 +59,8 @@ export default function ToolsHero({
   testId = 'tools-hero'
 }: ToolsHeroProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   // Trigger animation on mount
   useEffect(() => {
@@ -68,6 +70,31 @@ export default function ToolsHero({
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Touch event handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > TOOLS_CONFIG.carousel.touchSensitivity;
+    const isRightSwipe = distance < -TOOLS_CONFIG.carousel.touchSensitivity;
+
+    if (isLeftSwipe && activeSlide < totalSlides - 1) {
+      onDotClick(activeSlide + 1);
+    }
+    if (isRightSwipe && activeSlide > 0) {
+      onDotClick(activeSlide - 1);
+    }
+  };
 
   // Get current slide data
   const currentSlide = useMemo(() => {
@@ -89,6 +116,9 @@ export default function ToolsHero({
           data-testid={testId}
           role="img"
           aria-label={`Slide ${currentSlide.number}: ${currentSlide.alt}`}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Content */}
           <div className="relative z-10 h-full flex flex-col justify-between min-h-[350px] lg:min-h-[450px]">
