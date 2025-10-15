@@ -20,6 +20,8 @@ import { COLORS } from '@/config/colors';
 export const TOOLS_CONFIG = {
   /** Text content configuration */
   content: {
+    /** Main title text */
+    title: 'Monitor your portfolio and grow smarter',
     /** CTA button text */
     cta: {
       /** Button text */

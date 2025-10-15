@@ -182,11 +182,8 @@ export function getSafeTitleContent(title: unknown): TitleContent {
     validateTitleContent(title);
     return title as TitleContent;
   } catch {
-    // Return fallback title content
-    return {
-      line1: '',
-      line2: ''
-    };
+    // Return empty title content
+    return { line1: '', line2: '' };
   }
 }
 
@@ -286,18 +283,6 @@ export function shouldEnableAnimations(showAnimations: boolean, isMounted: boole
 }
 
 /**
- * Formats title lines for display
- * @param title - Title content to format
- * @returns Formatted title lines
- */
-export function formatTitleLines(title: TitleContent): { line1: string; line2: string } {
-  return {
-    line1: title.line1.trim(),
-    line2: title.line2.trim()
-  };
-}
-
-/**
  * Validates slide index
  * @param index - Slide index to validate
  * @param totalSlides - Total number of slides
@@ -320,7 +305,6 @@ const ToolsUtils = {
   validateAnimationSpeed,
   generateDotKey,
   shouldEnableAnimations,
-  formatTitleLines,
   validateSlideIndex
 };
 

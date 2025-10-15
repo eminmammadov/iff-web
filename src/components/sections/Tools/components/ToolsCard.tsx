@@ -18,11 +18,10 @@ interface ToolsCardProps {
 }
 
 /**
- * ToolsCard component that renders the right side content card with title, description and CTA.
+ * ToolsCard component that renders the right side content card with title and description.
  * 
  * Features:
  * - Content card with title and description
- * - CTA button using Button UI component
  * - Responsive design
  * - Accessibility compliant
  * - Performance optimized
@@ -34,7 +33,6 @@ interface ToolsCardProps {
  * ```tsx
  * <ToolsCard
  *   content={cardContent}
- *   onCTAClick={() => console.log('CTA clicked')}
  * />
  * ```
  */
@@ -48,7 +46,6 @@ export default function ToolsCard({
     title: getSafeTitleContent(content.title),
     description: content.description || ''
   }), [content]);
-
 
   return (
     <div 

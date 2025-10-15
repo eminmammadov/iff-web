@@ -35,11 +35,8 @@ import Button from '@/components/ui/Button';
  * 
  * // With custom content
  * <ToolsSection 
- *   title={{
- *     line1: 'Custom Title',
- *     line2: 'Custom Subtitle'
- *   }}
- *   description="Custom description"
+ *   cta={customCTA}
+ *   hero={customHero}
  *   onCTAClick={() => console.log('CTA clicked')}
  * />
  * ```
@@ -155,23 +152,11 @@ export default function ToolsSection({
                   ${TOOLS_CONFIG.typography.titleWeight}
                   ${TOOLS_CONFIG.typography.titleLineHeight}
                   ${TOOLS_CONFIG.styling.textPrimary}
-                  mb-0
                 `}
-                data-testid={`${testId}-title-line1`}
+                data-testid={`${testId}-title`}
               >
-                Monitor your portfolio
+                {TOOLS_CONFIG.content.title}
               </h1>
-              <h2 
-                className={`
-                  ${TOOLS_CONFIG.typography.titleSize}
-                  ${TOOLS_CONFIG.typography.titleWeight}
-                  ${TOOLS_CONFIG.typography.titleLineHeight}
-                  ${TOOLS_CONFIG.styling.textPrimary}
-                `}
-                data-testid={`${testId}-title-line2`}
-              >
-                and grow smarter
-              </h2>
             </div>
           </div>
 

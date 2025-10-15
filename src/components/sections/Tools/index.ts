@@ -46,7 +46,6 @@ export {
   validateAnimationSpeed,
   generateDotKey,
   shouldEnableAnimations,
-  formatTitleLines,
   validateSlideIndex
 } from './utils';
 

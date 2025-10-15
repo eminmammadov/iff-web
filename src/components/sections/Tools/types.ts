@@ -13,10 +13,6 @@ export interface ToolsProps {
   className?: string;
   /** Test ID for testing */
   testId?: string;
-  /** Custom title content */
-  title?: TitleContent;
-  /** Custom description text */
-  description?: string;
   /** Custom CTA button configuration */
   cta?: CTAConfig;
   /** Custom hero content */
