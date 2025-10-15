@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Hero from '@/components/sections/Hero';
 import Partners from '@/components/sections/Partners';
 import Entrance from '@/components/sections/Entrance';
+import ToolsSection from '@/components/sections/Tools';
 
 export default function Home() {
   // Sayfa yüklendiğinde scroll pozisyonunu sıfırla
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <Partners />
       <Entrance />
+      <ToolsSection />
     </main>
   );
 }
