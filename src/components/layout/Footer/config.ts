@@ -41,7 +41,7 @@ export const FOOTER_CONFIG = {
         ]
       },
       {
-        title: 'Auth',
+        title: 'App',
         items: [
           { label: 'Join', href: 'https://app.if.fund/join', external: true },
           { label: 'Crypto Portfolio', href: 'https://app.if.fund/portfolio', external: true },
