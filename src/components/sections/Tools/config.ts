@@ -41,13 +41,13 @@ export const TOOLS_CONFIG = {
           /** Slide number */
           number: '01',
           /** Slide description */
-          description: 'Discover upcoming projects and early opportunities before they gain traction, and be among the first to invest in the next big innovations.',
+          description: 'Discover promising projects early and invest before they reach the mainstream.',
           /** Slide image */
           image: '/images/graphics/prelist.svg',
           /** Image alt text */
           alt: 'Discover upcoming projects and early opportunities',
           /** Card title for this slide */
-          cardTitle: 'Discover upcoming projects and early opportunities.',
+          cardTitle: 'Prelist',
           /** Card description for this slide */
           cardDescription: 'Stay ahead of the market by discovering high-potential projects before they go mainstream. Helps you identify early opportunities, analyze project credibility, and make informed investment decisions — giving you a strategic edge in the fast-moving world of crypto innovation.'
         },
@@ -55,13 +55,13 @@ export const TOOLS_CONFIG = {
           /** Slide number */
           number: '02',
           /** Slide description */
-          description: 'Track your investments and portfolio performance in real time, and gain deeper insights to optimize your strategy and maximize returns.',
+          description: 'Track your portfolio in real time and optimize strategies for higher returns.',
           /** Slide image */
           image: '/images/graphics/portfolio.svg',
           /** Image alt text */
           alt: 'Track your investments and portfolio performance',
           /** Card title for this slide */
-          cardTitle: 'Track your investments and portfolio performance',
+          cardTitle: 'Crypto Portfolio',
           /** Card description for this slide */
           cardDescription: 'Keep full visibility over your assets with real-time tracking and detailed analytics. Empowers you to understand your portfolio\'s performance, spot growth opportunities, and refine your investment strategy to achieve better, data-driven results.'
         },
@@ -69,13 +69,13 @@ export const TOOLS_CONFIG = {
           /** Slide number */
           number: '03',
           /** Slide description */
-          description: 'Access real-time market data and advanced analysis tools to stay informed, identify trends, and make smarter investment decisions.',
+          description: 'Get live market insights and use advanced tools to make smarter investments.',
           /** Slide image */
           image: '/images/graphics/market.svg',
           /** Image alt text */
           alt: 'Real-time market data and analysis tools',
           /** Card title for this slide */
-          cardTitle: 'Real-time market data and analysis tools',
+          cardTitle: 'Market',
           /** Card description for this slide */
           cardDescription: 'Stay informed with live market insights and professional-grade analysis tools. Provides the data you need to track market trends, evaluate assets, and make confident, well-timed investment decisions in a rapidly changing market.'
         }
