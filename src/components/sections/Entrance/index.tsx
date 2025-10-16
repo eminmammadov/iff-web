@@ -121,6 +121,15 @@ export default function Entrance({
     } else {
       handleCTAClick();
     }
+    
+    // Scroll to Tools section
+    const toolsSection = document.getElementById('tools-section');
+    if (toolsSection) {
+      toolsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   return (

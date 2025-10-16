@@ -116,6 +116,7 @@ export default function ToolsSection({
 
   return (
     <section 
+      id="tools-section"
       className={`
         w-full 
         ${TOOLS_CONFIG.layout.verticalSpacing} 
