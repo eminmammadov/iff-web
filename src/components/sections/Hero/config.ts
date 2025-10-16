@@ -43,7 +43,7 @@ export const HERO_CONFIG = {
     /** Background image alt text */
     alt: "Hero background image",
     /** Background overlay opacity */
-    overlayOpacity: 0.7
+    overlayOpacity: 0.4
   },
   
   /** Typography configuration */
