@@ -83,7 +83,7 @@ export default function Logo({
     >
       {!imageError ? (
         <Image
-          src="/images/logos/kriptaz-invest-full-black-logo.svg"
+          src="/images/logos/if-funds-full-black-logo.svg"
           alt={alt}
           width={width}
           height={height}
