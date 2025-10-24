@@ -20,9 +20,9 @@ export const MODAL_DEVELOPMENT_CONFIG = {
   /** Modal styling */
   classes: {
     /** Modal overlay - glass effect */
-    overlay: 'fixed inset-0 backdrop-blur-md flex items-center justify-center z-50',
+    overlay: 'fixed inset-0 backdrop-blur-md flex items-center justify-center z-50 w-full',
     /** Modal container - glass effect, opak arka plan */
-    container: `${COLORS.bgBlack} backdrop-blur-md border border-gray-600 rounded-xl shadow-2xl overflow-y-auto`,
+    container: `${COLORS.bgBlack} backdrop-blur-md border border-gray-600 rounded-xl shadow-2xl overflow-y-auto mx-4 w-full max-w-sm`,
     /** Modal content */
     content: 'flex flex-col h-full'
   },
