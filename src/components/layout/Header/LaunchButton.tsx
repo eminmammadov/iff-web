@@ -1,5 +1,9 @@
+'use client';
+
+import { useState } from 'react';
 import Button from '@/components/ui/Button';
 import { HEADER_CONFIG } from './config';
+import ModalDevelopment from '@/components/common/ModalDevelopment';
 
 /**
  * Props for the LaunchButton component
@@ -19,7 +23,7 @@ interface LaunchButtonProps {
  * Features:
  * - Consistent styling across mobile and desktop
  * - Status indicator with orange dot
- * - External link to application
+ * - Opens development stage modal
  * - Customizable styling and state
  * 
  * @param props - LaunchButton component props
@@ -42,16 +46,33 @@ export default function LaunchButton({
   disabled = false,
   testId = 'launch-button'
 }: LaunchButtonProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <Button 
-      href={HEADER_CONFIG.appUrl} 
-      variant="primary"
-      className={className}
-      disabled={disabled}
-      data-testid={testId}
-    >
-      <div className={`${HEADER_CONFIG.button.statusIndicator.size} ${HEADER_CONFIG.button.statusIndicator.color} ${HEADER_CONFIG.button.statusIndicator.shape} ${HEADER_CONFIG.button.statusIndicator.margin}`}></div>
-      {HEADER_CONFIG.button.text}
-    </Button>
+    <>
+      <Button 
+        onClick={handleButtonClick}
+        variant="primary"
+        className={className}
+        disabled={disabled}
+        data-testid={testId}
+      >
+        <div className={`${HEADER_CONFIG.button.statusIndicator.size} ${HEADER_CONFIG.button.statusIndicator.color} ${HEADER_CONFIG.button.statusIndicator.shape} ${HEADER_CONFIG.button.statusIndicator.margin}`}></div>
+        {HEADER_CONFIG.button.text}
+      </Button>
+
+      <ModalDevelopment 
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
+    </>
   );
 }
