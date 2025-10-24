@@ -9,11 +9,11 @@ export const SEO_CONFIG = {
   /** Site Information */
   site: {
     /** Site name */
-    name: "IF Funds",
+    name: process.env.NEXT_PUBLIC_SITE_NAME || "IF Funds",
     /** Full site name */
-    fullName: "Invest Founders - Crypto Investment Fund",
+    fullName: process.env.NEXT_PUBLIC_SITE_NAME || "Invest Founders - Crypto Investment Fund",
     /** Site description */
-    description: "Crypto investment, tokenized equity, and asset management funds with in-depth market analysis. Professional crypto portfolio management and investment strategies.",
+    description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || "Crypto investment, tokenized equity, and asset management funds with in-depth market analysis. Professional crypto portfolio management and investment strategies.",
     /** Site URL */
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://if.fund",
     /** Site logo */
@@ -79,9 +79,9 @@ export const SEO_CONFIG = {
     /** Twitter card type */
     card: "summary_large_image",
     /** Twitter site */
-    site: "@iffunds",
+    site: process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@iffunds",
     /** Twitter creator */
-    creator: "@iffunds",
+    creator: process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@iffunds",
     /** Twitter title */
     title: "IF Funds - Crypto Investment & Asset Management Fund",
     /** Twitter description */
@@ -231,11 +231,11 @@ export const SEO_CONFIG = {
   /** Analytics Configuration */
   analytics: {
     /** Google Analytics ID */
-    googleAnalytics: process.env.NEXT_PUBLIC_GA_ID,
+    googleAnalytics: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,
     /** Google Tag Manager ID */
-    gtm: process.env.NEXT_PUBLIC_GTM_ID,
+    gtm: process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID,
     /** Facebook Pixel ID */
-    facebookPixel: process.env.NEXT_PUBLIC_FB_PIXEL_ID
+    facebookPixel: process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID
   }
 } as const;
 

@@ -94,14 +94,32 @@ runAllSEOTests();
 
 ## 🔧 Konfigürasyon
 
-Ana konfigürasyon `config/seo.ts` dosyasında bulunur:
+Ana konfigürasyon `config/seo.ts` dosyasında bulunur ve environment variables kullanır:
 
-- Site bilgileri
+### Environment Variables
+```bash
+# Site Configuration
+NEXT_PUBLIC_SITE_URL=https://if.fund
+NEXT_PUBLIC_SITE_NAME=IF Funds
+NEXT_PUBLIC_SITE_DESCRIPTION=Crypto investment, tokenized equity, and asset management funds with in-depth market analysis
+
+# Analytics Configuration
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID=GTM-XXXXXXX
+NEXT_PUBLIC_FACEBOOK_PIXEL_ID=XXXXXXXXXXXXXXX
+
+# Social Media Configuration
+NEXT_PUBLIC_TWITTER_HANDLE=@iffunds
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-site-verification-code
+```
+
+### Konfigürasyon Öğeleri
+- Site bilgileri (environment variables ile)
 - Metadata ayarları
 - Open Graph konfigürasyonu
 - Twitter Cards ayarları
 - Structured data şemaları
-- Analytics konfigürasyonu
+- Analytics konfigürasyonu (environment variables ile)
 
 ## 📈 Performans
 
